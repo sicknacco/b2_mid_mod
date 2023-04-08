@@ -41,6 +41,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
+  gem 'simplecov'
+  gem 'net-http' # for removing white trace.
 end
 
 group :development do
