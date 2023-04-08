@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2023_04_08_160607) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "employee_tickets", id: false, force: :cascade do |t|
+    t.bigint "employee_id", null: false
+    t.bigint "ticket_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id", "ticket_id"], name: "index_employee_tickets_on_employee_id_and_ticket_id"
+    t.index ["ticket_id", "employee_id"], name: "index_employee_tickets_on_ticket_id_and_employee_id"
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.integer "level"
@@ -29,15 +38,6 @@ ActiveRecord::Schema.define(version: 2023_04_08_160607) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["department_id"], name: "index_employees_on_department_id"
-  end
-
-  create_table "employees_tickets", id: false, force: :cascade do |t|
-    t.bigint "employee_id", null: false
-    t.bigint "ticket_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id", "ticket_id"], name: "index_employees_tickets_on_employee_id_and_ticket_id"
-    t.index ["ticket_id", "employee_id"], name: "index_employees_tickets_on_ticket_id_and_employee_id"
   end
 
   create_table "tickets", force: :cascade do |t|
