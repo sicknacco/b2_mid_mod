@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Department.destroy_all
+Employee.destroy_all
+
+@accounting = Department.create!(name: "Accounting", floor: "3")
+@sales = Department.create!(name: "Sales", floor: "5")
+@software = Department.create!(name: "Software", floor: "4")
+
+@bill = @accounting.employees.create!(name: "Bill Roberts", level: 2)
+@will = @accounting.employees.create!(name: "Will Two", level: 3)
+@ted = @sales.employees.create!(name: "Ted Tedston", level: 6)
+@miller = @software.employees.create!(name: "Miller Mills", level: 3)
+@phil = @software.employees.create!(name: "Phil Walter", level: 1)
