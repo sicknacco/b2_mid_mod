@@ -24,9 +24,12 @@ Employee.destroy_all
 @ticket_4 = Ticket.create!(subject: "Office Supplies", age: 3)
 @ticket_5 = Ticket.create!(subject: "Broken Printer", age: 9)
 
+
 @bill_computer = EmployeeTicket.create!(employee: @bill, ticket: @ticket_1)
 @will_fridge = EmployeeTicket.create!(employee: @will, ticket: @ticket_2)
 @bill_lunch = EmployeeTicket.create!(employee: @bill, ticket: @ticket_3)
 @ted_printer = EmployeeTicket.create!(employee: @ted, ticket: @ticket_5)
 @miller_printer = EmployeeTicket.create!(employee: @miller, ticket: @ticket_5)
 @phil_supplies = EmployeeTicket.create!(employee: @phil, ticket: @ticket_4)
+@phil_lunch = EmployeeTicket.create!(employee: @phil, ticket: @ticket_3)
+@phil_computer = EmployeeTicket.create!(employee: @phil, ticket: @ticket_1)
