@@ -15,12 +15,23 @@ RSpec.describe 'Department index page' do
 
   it "shows each department's name and floor" do
     visit '/departments'
-
+    
     expect(page).to have_content("Accounting")
     expect(page).to have_content("Sales")
     expect(page).to have_content("Software")
     expect(page).to have_content("3")
     expect(page).to have_content("5")
     expect(page).to have_content("4")
+    # save_and_open_page
+  end
+  
+  it 'shows all employees in each department' do
+    visit '/departments'
+    
+    expect(page).to have_content("Bill Roberts")
+    expect(page).to have_content("Will Two")
+    expect(page).to have_content("Ted Tedston")
+    expect(page).to have_content("Miller Mills")
+    expect(page).to have_content("Phill Walter")
   end
 end
